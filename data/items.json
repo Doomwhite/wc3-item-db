@@ -3,7 +3,7 @@
     "id": "boots_of_speed",
     "name": "Boots of Speed",
     "iconPath": "assets/icons/boots_of_speed.png",
-    "markdownDescription": "Increases **movement speed** by 60.\n\n_A trusty pair of boots worn by many an adventurer!_",
+    "markdownDescription": "Increases **movement speed** by 60.\n\n_A trusty pair of boots worn by many an adventurer._",
     "rarity": "common",
     "goldCost": 300,
     "stats": { "moveSpeed": 60 },
