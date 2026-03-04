@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import itemsData from '../../../data/items.json';
+import shopsData from '../../../data/shops.json';
+import recipesData from '../../../data/recipes.json';
+
+const items = itemsData;
+const shops = shopsData;
+const recipes = recipesData;
+---
+
+<Layout title="Choice Battle — Item Database">
+  <div id="app">
+    <div id="map-container">
+      <div id="map"></div>
+    </div>
+    <div id="detail-panel" class="hidden">
+      <button id="detail-panel-close-button">✕</button>
+      <div id="detail-panel-content"></div>
+    </div>
+  </div>
+</Layout>
+
+<script define:vars={{ items, shops, recipes }}>
+  window.__wc3db = { items, shops, recipes };
+</script>
+<script src="../scripts/app.ts"></script>

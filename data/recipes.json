@@ -1,0 +1,8 @@
+[
+  {
+    "id": "recipe_boots_of_travel",
+    "resultItemId": "boots_of_travel",
+    "componentItemIds": ["boots_of_speed", "recipe_scroll"],
+    "goldCostToCombine": 0
+  }
+]

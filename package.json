@@ -1,0 +1,17 @@
+{
+  "name": "wc3-item-db",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "admin",
+    "site"
+  ],
+  "scripts": {
+    "build:shared": "npm run build --workspace=shared",
+    "build:site": "npm run build --workspace=site",
+    "build:admin": "npm run build --workspace=admin",
+    "build": "npm run build:shared && npm run build:site && npm run build:admin",
+    "dev:site": "npm run dev --workspace=site",
+    "dev:admin": "npm run dev --workspace=admin"
+  }
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "id": "goblin_merchant",
+    "name": "Goblin Merchant",
+    "iconPath": "assets/icons/goblin_merchant.png",
+    "mapPosition": { "x": 512, "y": 300 },
+    "itemIds": ["boots_of_speed"]
+  }
+]
