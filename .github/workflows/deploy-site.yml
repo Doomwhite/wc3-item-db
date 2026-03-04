@@ -31,11 +31,8 @@ jobs:
         with:
           node-version: 20
           cache: npm
-
-      - run: npm ci
-
-      - name: Build shared types
-        run: npm run build:shared
+            - 
+      - run: npm install
 
       - name: Build shared types
         run: npm run build:shared
