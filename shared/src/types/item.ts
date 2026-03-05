@@ -1,16 +1,6 @@
 export type ItemRarity = 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary';
 
-export interface ItemStats {
-    damage?: number;
-    armor?: number;
-    strength?: number;
-    agility?: number;
-    intelligence?: number;
-    hitPoints?: number;
-    mana?: number;
-    moveSpeed?: number;
-    attackSpeed?: number;
-}
+export type ItemStats = Record<string, number>;
 
 export interface Item {
     id: string;

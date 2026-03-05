@@ -1,0 +1,115 @@
+<div class="items-layout">
+  <aside class="item-list-panel">
+    <div class="item-list-header">
+      <span>{{ dataService.items().length }} items</span>
+      <button mat-icon-button (click)="addNewItem()" title="Add item">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+    <mat-divider />
+    <mat-nav-list>
+      @for (item of dataService.items(); track item.id) {
+        <a mat-list-item
+           [activated]="selectedItemId() === item.id"
+           (click)="selectItem(item.id)">
+          {{ item.name }}
+        </a>
+      }
+    </mat-nav-list>
+  </aside>
+
+  <mat-divider [vertical]="true" />
+
+  <section class="item-edit-panel">
+    @if (selectedItem(); as item) {
+      <div class="item-edit-header">
+        <h2>{{ item.name }}</h2>
+        <button mat-icon-button color="warn" (click)="deleteSelectedItem()" title="Delete item">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+
+      <div class="item-edit-form">
+        <mat-form-field appearance="outline">
+          <mat-label>ID</mat-label>
+          <input matInput [value]="item.id" (change)="updateSelectedItem({ id: $any($event.target).value })" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput [value]="item.name" (input)="updateSelectedItem({ name: $any($event.target).value })" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Icon path</mat-label>
+          <input matInput [value]="item.iconPath" (input)="updateSelectedItem({ iconPath: $any($event.target).value })" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Rarity</mat-label>
+          <mat-select [value]="item.rarity" (selectionChange)="updateSelectedItem({ rarity: $event.value })">
+            @for (rarity of rarityOptions; track rarity) {
+              <mat-option [value]="rarity">{{ rarity }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Gold cost</mat-label>
+          <input matInput type="number" [value]="item.goldCost" (input)="updateSelectedItem({ goldCost: +$any($event.target).value })" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Description (Markdown)</mat-label>
+          <textarea matInput rows="4" [value]="item.markdownDescription" (input)="updateSelectedItem({ markdownDescription: $any($event.target).value })"></textarea>
+        </mat-form-field>
+
+        <div class="stats-section full-width">
+          <div class="stats-header">
+            <h3>Stats</h3>
+            <button mat-stroked-button (click)="addStat()">
+              <mat-icon>add</mat-icon> Add stat
+            </button>
+          </div>
+
+          @if (statEntries().length === 0) {
+            <p class="no-stats">No stats yet.</p>
+          }
+
+          @for (entry of statEntries(); track entry.key) {
+            <div class="stat-row">
+              <mat-form-field appearance="outline">
+                <mat-label>Stat name</mat-label>
+                <input matInput
+                       [value]="entry.key"
+                       [matAutocomplete]="statAutocomplete"
+                       (change)="renameStatKey(entry.key, $any($event.target).value)" />
+                <mat-autocomplete #statAutocomplete="matAutocomplete"
+                                  (optionSelected)="renameStatKey(entry.key, $event.option.value)">
+                  @for (knownStat of knownStats; track knownStat) {
+                    <mat-option [value]="knownStat">{{ knownStat }}</mat-option>
+                  }
+                </mat-autocomplete>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Value</mat-label>
+                <input matInput type="number" [value]="entry.value" (input)="updateStat(entry.key, $any($event.target).value)" />
+              </mat-form-field>
+              <button mat-icon-button color="warn" (click)="removeStat(entry.key)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="item-edit-actions">
+        <button mat-raised-button color="primary" (click)="dataService.exportItems()">
+          Export items.json
+        </button>
+      </div>
+    } @else {
+      <p class="no-selection">Select an item from the list to edit it.</p>
+    }
+  </section>
+</div>

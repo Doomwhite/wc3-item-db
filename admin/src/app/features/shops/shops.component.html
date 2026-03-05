@@ -1,0 +1,88 @@
+<div class="shops-layout">
+  <aside class="shop-list-panel">
+    <div class="shop-list-header">
+      <span>{{ dataService.shops().length }} shops</span>
+    </div>
+    <mat-divider />
+    <mat-nav-list>
+      @for (shop of dataService.shops(); track shop.id) {
+        <a mat-list-item
+           [activated]="selectedShopId() === shop.id"
+           (click)="selectShop(shop.id)">
+          {{ shop.name || shop.id }}
+        </a>
+      }
+    </mat-nav-list>
+  </aside>
+
+  <mat-divider [vertical]="true" />
+
+  <section class="shop-edit-panel">
+    @if (selectedShop(); as shop) {
+      <div class="shop-edit-header">
+        <input class="shop-name-input"
+               [value]="shop.name"
+               (input)="updateShopName($any($event.target).value)"
+               placeholder="Shop name" />
+      </div>
+
+      <div class="drag-drop-layout">
+        <div class="drag-drop-column">
+          <h3>Shop inventory</h3>
+          <div class="item-drop-zone"
+               cdkDropList
+               #shopList="cdkDropList"
+               [cdkDropListData]="shopItems()"
+               [cdkDropListConnectedTo]="[availableList]"
+               (cdkDropListDropped)="dropOnShop($event)">
+            @for (item of shopItems(); track item.id) {
+              <div class="item-chip" cdkDrag [cdkDragData]="item">
+                @if (item.iconPath) {
+                  <img [src]="'/' + item.iconPath" [alt]="item.name" width="24" height="24" />
+                }
+                <span>{{ item.name }}</span>
+              </div>
+            }
+            @if (shopItems().length === 0) {
+              <p class="empty-zone-hint">Drag items here.</p>
+            }
+          </div>
+        </div>
+
+        <div class="drag-drop-column">
+          <h3>Available items</h3>
+          <mat-form-field appearance="outline" class="search-field">
+            <mat-label>Search</mat-label>
+            <input matInput [value]="searchQuery()" (input)="searchQuery.set($any($event.target).value)" />
+          </mat-form-field>
+          <div class="item-drop-zone"
+               cdkDropList
+               #availableList="cdkDropList"
+               [cdkDropListData]="filteredAvailableItems()"
+               [cdkDropListConnectedTo]="[shopList]"
+               (cdkDropListDropped)="dropOnAvailable($event)">
+            @for (item of filteredAvailableItems(); track item.id) {
+              <div class="item-chip" cdkDrag [cdkDragData]="item">
+                @if (item.iconPath) {
+                  <img [src]="'/' + item.iconPath" [alt]="item.name" width="24" height="24" />
+                }
+                <span>{{ item.name }}</span>
+              </div>
+            }
+            @if (filteredAvailableItems().length === 0) {
+              <p class="empty-zone-hint">No items match the search.</p>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="shop-edit-actions">
+        <button mat-raised-button color="primary" (click)="dataService.exportShops()">
+          Export shops.json
+        </button>
+      </div>
+    } @else {
+      <p class="no-selection">Select a shop from the list to edit it.</p>
+    }
+  </section>
+</div>

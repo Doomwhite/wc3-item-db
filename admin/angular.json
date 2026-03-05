@@ -26,6 +26,16 @@
             "assets": [
               {
                 "glob": "**/*",
+                "input": "../data",
+                "output": "/data"
+              },
+              {
+                "glob": "**/*",
+                "input": "../assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
                 "input": "public"
               }
             ],
