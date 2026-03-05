@@ -55,17 +55,19 @@ function closeDetailPanel() {
 }
 
 function renderShopPanel(shop: Shop): string {
-  const itemListHtml = shop.itemIds.map(itemId => {
-    const item = itemsById.get(itemId);
-    if (!item) return '';
-    return `
-      <div class="shop-item" data-item-id="${item.id}" style="cursor:pointer; display:flex; align-items:center; gap:0.5rem; padding:0.4rem 0; border-bottom:1px solid #0f3460;">
-        <img src="/wc3-item-db/${item.iconPath}" width="32" height="32" alt="${item.name}" />
-        <span class="item-rarity-${item.rarity}">${item.name}</span>
-        <span style="margin-left:auto; color:#ffd700;">${item.goldCost}g</span>
-      </div>
-    `;
-  }).join('');
+  const itemListHtml = shop.slots
+      .sort((slotA, slotB) => slotA.slotIndex - slotB.slotIndex)
+      .map(slot => {
+        const item = itemsById.get(slot.itemId);
+        if (!item) return '';
+        return `
+        <div class="shop-item" data-item-id="${item.id}" style="cursor:pointer; display:flex; align-items:center; gap:0.5rem; padding:0.4rem 0; border-bottom:1px solid #0f3460;">
+          <img src="/wc3-item-db/${item.iconPath}" width="32" height="32" alt="${item.name}" />
+          <span class="item-rarity-${item.rarity}">${item.name}</span>
+          <span style="margin-left:auto; color:#ffd700;">${item.goldCost}g</span>
+        </div>
+      `;
+      }).join('');
 
   return `
     <h2 style="margin-bottom:1rem;">${shop.name}</h2>

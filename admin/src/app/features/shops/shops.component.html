@@ -29,22 +29,28 @@
       <div class="drag-drop-layout">
         <div class="drag-drop-column">
           <h3>Shop inventory</h3>
-          <div class="item-drop-zone"
-               cdkDropList
-               #shopList="cdkDropList"
-               [cdkDropListData]="shopItems()"
-               [cdkDropListConnectedTo]="[availableList]"
-               (cdkDropListDropped)="dropOnShop($event)">
-            @for (item of shopItems(); track item.id) {
-              <div class="item-chip" cdkDrag [cdkDragData]="item">
-                @if (item.iconPath) {
-                  <img [src]="'/' + item.iconPath" [alt]="item.name" width="24" height="24" />
+          <div class="shop-grid">
+            @for (slot of shopSlots(); track $index) {
+              <div class="shop-slot"
+                   cdkDropList
+                   [id]="slotDropListId($index)"
+                   [cdkDropListData]="[slot]"
+                   [cdkDropListConnectedTo]="['available-list']"
+                   (cdkDropListDropped)="dropOnSlot($event, $index)">
+                @if (slot) {
+                  <div class="item-chip slot-item" cdkDrag [cdkDragData]="slot">
+                    @if (slot.iconPath) {
+                      <img [src]="'/' + slot.iconPath" [alt]="slot.name" width="40" height="40" />
+                    }
+                    <span class="slot-item-name">{{ slot.name }}</span>
+                    <button class="slot-remove-button" (click)="removeFromSlot($index)">✕</button>
+                  </div>
+                } @else {
+                  <div class="slot-empty">
+                    <span>+</span>
+                  </div>
                 }
-                <span>{{ item.name }}</span>
               </div>
-            }
-            @if (shopItems().length === 0) {
-              <p class="empty-zone-hint">Drag items here.</p>
             }
           </div>
         </div>
@@ -57,9 +63,9 @@
           </mat-form-field>
           <div class="item-drop-zone"
                cdkDropList
-               #availableList="cdkDropList"
+               id="available-list"
                [cdkDropListData]="filteredAvailableItems()"
-               [cdkDropListConnectedTo]="[shopList]"
+               [cdkDropListConnectedTo]="shopSlotIds()"
                (cdkDropListDropped)="dropOnAvailable($event)">
             @for (item of filteredAvailableItems(); track item.id) {
               <div class="item-chip" cdkDrag [cdkDragData]="item">

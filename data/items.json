@@ -5,9 +5,14 @@
     "iconPath": "assets/icons/boots.png",
     "markdownDescription": "Increases **movement speed**.",
     "rarity": "common",
-    "goldCost": 0,
-    "stats": {},
-    "soldAt": ["karin"],
+    "goldCost": 1000,
+    "stats": {
+      "movement speed": 100,
+      "all stats": 17
+    },
+    "soldAt": [
+      "karin"
+    ],
     "buildsInto": []
   },
   {
@@ -18,7 +23,9 @@
     "rarity": "common",
     "goldCost": 0,
     "stats": {},
-    "soldAt": ["karin"],
+    "soldAt": [
+      "karin"
+    ],
     "buildsInto": []
   },
   {
@@ -27,10 +34,16 @@
     "iconPath": "assets/icons/medallion.png",
     "markdownDescription": "Provides defensive bonuses.",
     "rarity": "common",
-    "goldCost": 0,
-    "stats": {},
-    "soldAt": ["karin"],
-    "buildsInto": ["ward_2"]
+    "goldCost": 900,
+    "stats": {
+      "all stats": 14
+    },
+    "soldAt": [
+      "karin"
+    ],
+    "buildsInto": [
+      "ward_2"
+    ]
   },
   {
     "id": "ribbon",
@@ -40,7 +53,9 @@
     "rarity": "common",
     "goldCost": 0,
     "stats": {},
-    "soldAt": ["karin"],
+    "soldAt": [
+      "karin"
+    ],
     "buildsInto": []
   },
   {
@@ -51,7 +66,9 @@
     "rarity": "common",
     "goldCost": 0,
     "stats": {},
-    "soldAt": ["karin"],
+    "soldAt": [
+      "karin"
+    ],
     "buildsInto": []
   },
   {
@@ -62,7 +79,9 @@
     "rarity": "common",
     "goldCost": 0,
     "stats": {},
-    "soldAt": ["karin"],
+    "soldAt": [
+      "karin"
+    ],
     "buildsInto": []
   },
   {
@@ -73,8 +92,12 @@
     "rarity": "common",
     "goldCost": 0,
     "stats": {},
-    "soldAt": ["karin"],
-    "buildsInto": ["ward_2"]
+    "soldAt": [
+      "karin"
+    ],
+    "buildsInto": [
+      "ward_2"
+    ]
   },
   {
     "id": "ward_2",
@@ -85,7 +108,9 @@
     "goldCost": 0,
     "stats": {},
     "soldAt": [],
-    "buildsInto": ["ward_3"]
+    "buildsInto": [
+      "ward_3"
+    ]
   },
   {
     "id": "ward_3",
