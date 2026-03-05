@@ -1,8 +1,14 @@
 [
   {
-    "id": "recipe_boots_of_travel",
-    "resultItemId": "boots_of_travel",
-    "componentItemIds": ["boots_of_speed", "recipe_scroll"],
+    "id": "recipe_ward_2",
+    "resultItemId": "ward_2",
+    "componentItemIds": ["ward_1", "ward_1", "medallion"],
+    "goldCostToCombine": 0
+  },
+  {
+    "id": "recipe_ward_3",
+    "resultItemId": "ward_3",
+    "componentItemIds": ["ward_2"],
     "goldCostToCombine": 0
   }
 ]

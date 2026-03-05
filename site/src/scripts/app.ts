@@ -29,9 +29,9 @@ const wc3Map = L.map('map', {
   zoomSnap: 0.5,
 });
 
-const mapImageBounds: L.LatLngBoundsExpression = [[0, 0], [1024, 1024]];
+const mapImageBounds: L.LatLngBoundsExpression = [[0, 0], [559, 1168]];
 L.imageOverlay('/wc3-item-db/assets/map.png', mapImageBounds).addTo(wc3Map);
-wc3Map.fitBounds(mapImageBounds);
+wc3Map.fitBounds(mapImageBounds, { padding: [0, 0] });
 
 const shopMarkers = new Map<string, L.Marker>();
 
@@ -191,3 +191,7 @@ detailPanelCloseButton.addEventListener('click', () => {
 
 window.addEventListener('hashchange', handleHashChange);
 handleHashChange();
+
+wc3Map.on('click', (event) => {
+  console.log(`x: ${event.latlng.lng}, y: ${event.latlng.lat}`);
+});

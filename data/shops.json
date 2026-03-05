@@ -1,9 +1,18 @@
 [
-  {
-    "id": "goblin_merchant",
-    "name": "Goblin Merchant",
-    "iconPath": "assets/icons/goblin_merchant.png",
-    "mapPosition": { "x": 512, "y": 300 },
-    "itemIds": ["boots_of_speed"]
-  }
+  { "id": "orochimaru", "name": "Orochimaru", "iconPath": "", "mapPosition": { "x": 204, "y": 407 }, "itemIds": [] },
+  { "id": "kabuto", "name": "Kabuto", "iconPath": "", "mapPosition": { "x": 269, "y": 407 }, "itemIds": [] },
+  { "id": "madara", "name": "Madara", "iconPath": "", "mapPosition": { "x": 336, "y": 407 }, "itemIds": [] },
+  { "id": "lucy", "name": "Lucy", "iconPath": "", "mapPosition": { "x": 403, "y": 404 }, "itemIds": [] },
+  { "id": "sasuke", "name": "Sasuke", "iconPath": "", "mapPosition": { "x": 197, "y": 361 }, "itemIds": [] },
+  { "id": "sakura", "name": "Sakura", "iconPath": "", "mapPosition": { "x": 263, "y": 356 }, "itemIds": [] },
+  { "id": "killer_bee", "name": "Killer Bee", "iconPath": "", "mapPosition": { "x": 330, "y": 354 }, "itemIds": [] },
+  { "id": "gaara", "name": "Gaara", "iconPath": "", "mapPosition": { "x": 399, "y": 353 }, "itemIds": [] },
+  { "id": "karin", "name": "Karin", "iconPath": "", "mapPosition": { "x": 191, "y": 319 }, "itemIds": ["boots", "gloves", "medallion", "ribbon", "staff", "sword", "ward_1"] },
+  { "id": "tobi", "name": "Tobi", "iconPath": "", "mapPosition": { "x": 644, "y": 196 }, "itemIds": [] },
+  { "id": "kimimaro", "name": "Kimimaro", "iconPath": "", "mapPosition": { "x": 694, "y": 290 }, "itemIds": [] },
+  { "id": "suigetsu", "name": "Suigetsu", "iconPath": "", "mapPosition": { "x": 822, "y": 407 }, "itemIds": [] },
+  { "id": "shop_13", "name": "Shop ?", "iconPath": "", "mapPosition": { "x": 892, "y": 409 }, "itemIds": [] },
+  { "id": "shop_14", "name": "Shop ??", "iconPath": "", "mapPosition": { "x": 896, "y": 364 }, "itemIds": [] },
+  { "id": "jugo", "name": "Jugo", "iconPath": "", "mapPosition": { "x": 963, "y": 368 }, "itemIds": [] },
+  { "id": "anko", "name": "Anko", "iconPath": "", "mapPosition": { "x": 956, "y": 412 }, "itemIds": [] }
 ]

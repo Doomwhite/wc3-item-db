@@ -1,13 +1,101 @@
 [
   {
-    "id": "boots_of_speed",
-    "name": "Boots of Speed",
-    "iconPath": "assets/icons/boots_of_speed.png",
-    "markdownDescription": "Increases **movement speed** by 60.\n\n_A trusty pair of boots worn by many an adventurer!_",
+    "id": "boots",
+    "name": "Boots",
+    "iconPath": "assets/icons/boots.png",
+    "markdownDescription": "Increases **movement speed**.",
     "rarity": "common",
-    "goldCost": 300,
-    "stats": { "moveSpeed": 60 },
-    "soldAt": ["goblin_merchant"],
-    "buildsInto": ["boots_of_travel"]
+    "goldCost": 0,
+    "stats": {},
+    "soldAt": ["karin"],
+    "buildsInto": []
+  },
+  {
+    "id": "gloves",
+    "name": "Gloves",
+    "iconPath": "assets/icons/gloves.png",
+    "markdownDescription": "Increases **attack speed**.",
+    "rarity": "common",
+    "goldCost": 0,
+    "stats": {},
+    "soldAt": ["karin"],
+    "buildsInto": []
+  },
+  {
+    "id": "medallion",
+    "name": "Medallion",
+    "iconPath": "assets/icons/medallion.png",
+    "markdownDescription": "Provides defensive bonuses.",
+    "rarity": "common",
+    "goldCost": 0,
+    "stats": {},
+    "soldAt": ["karin"],
+    "buildsInto": ["ward_2"]
+  },
+  {
+    "id": "ribbon",
+    "name": "Ribbon",
+    "iconPath": "assets/icons/ribbon.png",
+    "markdownDescription": "Provides bonuses.",
+    "rarity": "common",
+    "goldCost": 0,
+    "stats": {},
+    "soldAt": ["karin"],
+    "buildsInto": []
+  },
+  {
+    "id": "staff",
+    "name": "Staff",
+    "iconPath": "assets/icons/staff.png",
+    "markdownDescription": "Increases **intelligence**.",
+    "rarity": "common",
+    "goldCost": 0,
+    "stats": {},
+    "soldAt": ["karin"],
+    "buildsInto": []
+  },
+  {
+    "id": "sword",
+    "name": "Sword",
+    "iconPath": "assets/icons/sword.png",
+    "markdownDescription": "Increases **damage**.",
+    "rarity": "common",
+    "goldCost": 0,
+    "stats": {},
+    "soldAt": ["karin"],
+    "buildsInto": []
+  },
+  {
+    "id": "ward_1",
+    "name": "Ward I",
+    "iconPath": "assets/icons/ward_1.png",
+    "markdownDescription": "A basic ward.",
+    "rarity": "common",
+    "goldCost": 0,
+    "stats": {},
+    "soldAt": ["karin"],
+    "buildsInto": ["ward_2"]
+  },
+  {
+    "id": "ward_2",
+    "name": "Ward II",
+    "iconPath": "assets/icons/ward_2.png",
+    "markdownDescription": "An upgraded ward.",
+    "rarity": "uncommon",
+    "goldCost": 0,
+    "stats": {},
+    "soldAt": [],
+    "buildsInto": ["ward_3"]
+  },
+  {
+    "id": "ward_3",
+    "name": "Ward III",
+    "iconPath": "assets/icons/ward_3.png",
+    "markdownDescription": "A powerful ward.",
+    "rarity": "rare",
+    "goldCost": 0,
+    "stats": {},
+    "soldAt": [],
+    "buildsInto": []
   }
 ]
