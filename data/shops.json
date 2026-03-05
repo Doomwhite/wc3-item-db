@@ -11,8 +11,8 @@
   { "id": "tobi", "name": "Tobi", "iconPath": "", "mapPosition": { "x": 644, "y": 196 }, "itemIds": [] },
   { "id": "kimimaro", "name": "Kimimaro", "iconPath": "", "mapPosition": { "x": 694, "y": 290 }, "itemIds": [] },
   { "id": "suigetsu", "name": "Suigetsu", "iconPath": "", "mapPosition": { "x": 822, "y": 407 }, "itemIds": [] },
-  { "id": "shop_13", "name": "Shop ?", "iconPath": "", "mapPosition": { "x": 892, "y": 409 }, "itemIds": [] },
-  { "id": "shop_14", "name": "Shop ??", "iconPath": "", "mapPosition": { "x": 896, "y": 364 }, "itemIds": [] },
+  { "id": "shop_13", "name": "Shop Unknown", "iconPath": "", "mapPosition": { "x": 892, "y": 409 }, "itemIds": [] },
+  { "id": "shop_14", "name": "Shop Unknown", "iconPath": "", "mapPosition": { "x": 896, "y": 364 }, "itemIds": [] },
   { "id": "jugo", "name": "Jugo", "iconPath": "", "mapPosition": { "x": 963, "y": 368 }, "itemIds": [] },
   { "id": "anko", "name": "Anko", "iconPath": "", "mapPosition": { "x": 956, "y": 412 }, "itemIds": [] }
 ]
